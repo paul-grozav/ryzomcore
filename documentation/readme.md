@@ -50,6 +50,10 @@ apt update && apt install -y \
     ```
 
 ## Post-Build
+- Run client using
+```bash
+( cd ../ryzom/client/ && MESA_LOADER_DRIVER_OVERRIDE=llvmpipe MESA_GL_VERSION_OVERRIDE=4.5 ../../build/bin/ryzom_client )
+```
 - The server binary will be located in the `bin` directory within the build folder.
 - Ensure you configure the server by editing the configuration files located in the `config` directory.
 
