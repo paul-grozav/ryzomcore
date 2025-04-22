@@ -50,8 +50,9 @@ apt update && apt install -y \
     ```
 
 ## Post-Build
-- Run client using
+- Run client using:
 ```bash
+apt-get install liblua5.2 libluabind-dev
 ( cd ../ryzom/client/ && MESA_LOADER_DRIVER_OVERRIDE=llvmpipe MESA_GL_VERSION_OVERRIDE=4.5 ../../build/bin/ryzom_client )
 ```
 - The server binary will be located in the `bin` directory within the build folder.
