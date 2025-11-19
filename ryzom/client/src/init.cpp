@@ -1314,7 +1314,7 @@ void prelogInit()
 
 
 		// Create a text context. We need to put the full path because we not already add search path
-		resetTextContext("uiFontSans", true);
+		resetTextContext("fonts/uiFontSans.ttf", true);
 
 		CInterfaceManager::getInstance()->setInterfaceScale(1.f, true);
 		CViewRenderer::getInstance()->setBilinearFiltering(ClientCfg.BilinearUI);
@@ -1513,7 +1513,6 @@ void postlogInit()
 	Driver->swapBuffers();
 	CNiceInputAuto niceInputs;
 	string nmsg;
-
 	try
 	{
 		NLMISC::TTime initStart = ryzomGetLocalTime();

@@ -19,7 +19,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
 #include "stdpch.h"
 
 //////////////
@@ -38,6 +37,7 @@
 #include "nel/misc/command.h"
 #include "nel/net/tcp_sock.h"
 #include "nel/misc/cmd_args.h"
+#include "nel/gui/lua_manager.h"
 
 //#define TEST_CRASH_COUNTER
 #ifdef TEST_CRASH_COUNTER
@@ -171,6 +171,9 @@ int main(int argc, char **argv)
 	createDebug(NULL, false);
 
 	INelContext::getInstance().setWindowedApplication(true);
+
+	CLuaState *state = CLuaManager::getInstance().getLuaState();
+	CLuaState &ls = *state;
 
 #ifndef NL_DEBUG
 	INelContext::getInstance().getDebugLog()->removeDisplayer("DEFAULT_SD");
